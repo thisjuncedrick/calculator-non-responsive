@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Calculator App | Not Responsive</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap 5 -->
+    <link href="assets/css/BS5/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="assets/css/BS5/js/bootstrap.bundle.min.js"></script>
+
+    <!-- FontAwesome 6.4.0 CSS -->
+    <link rel="stylesheet" href="assets/css/FontAwesome6/all.min.css" />
+
+    <!-- JQuery Library -->
+    <script src="assets/js/jQuery/jquery-3.7.0.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/scripts.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="screen-wrapper">
+          <div class="screen">
+            <span class="expression"></span>
+            <span class="total"></span>
+          </div>
+        </div>
+        <div class="key-wrapper">
+          <span class="key" data-value="C" data-function="clear-all">C</span>
+          <span class="key" data-value="%" data-function="percentage">%</span>
+          <span class="key" data-value="CA" data-function="clear">⌫</span>
+          <span class="key" data-value="/" data-function="operation">÷</span>
+          <span class="key" data-value="1" data-function="numbers">1</span>
+          <span class="key" data-value="2" data-function="numbers">2</span>
+          <span class="key" data-value="3" data-function="numbers">3</span>
+          <span class="key" data-value="*" data-function="operation">x</span>
+          <span class="key" data-value="4" data-function="numbers">4</span>
+          <span class="key" data-value="5" data-function="numbers">5</span>
+          <span class="key" data-value="6" data-function="numbers">6</span>
+          <span class="key" data-value="-" data-function="operation">-</span>
+          <span class="key" data-value="7" data-function="numbers">7</span>
+          <span class="key" data-value="8" data-function="numbers">8</span>
+          <span class="key" data-value="9" data-function="numbers">9</span>
+          <span class="key" data-value="+" data-function="operation">+</span>
+          <span class="key" data-value="." data-function="decimal">.</span>
+          <span class="key" data-value="0" data-function="numbers">0</span>
+          <span class="key" data-value="=" data-function="equals">=</span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <div class="toggle-wrapper">
+    <i class="fa-solid fa-moon"></i>
+    <label class="switch">
+      <input type="checkbox" id="mode-toggler" />
+      <span class="slider round"></span>
+    </label>
+    <i class="fa-solid fa-sun"></i>
+  </div>
+</html>

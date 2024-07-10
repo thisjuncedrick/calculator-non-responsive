@@ -1,0 +1,217 @@
+:root {
+  --height: 3;
+  --width: 4;
+
+  --background: #0b0b0b;
+
+  --calc-body: #1c3748;
+  --screen: #a1bace;
+
+  --functions: #1f5a79;
+  --numbers: #a1bace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-color: var(--background);
+  transition: all 0.3s ease;
+}
+
+body.light {
+  --background: #fbf9f1;
+
+  --calc-body: #92c7cf;
+  --screen: #f8f6e3;
+
+  --functions: #f875aa;
+  --numbers: #ffdfdf;
+}
+
+.container {
+  display: flex;
+  padding: 2em 0;
+  justify-content: center;
+  height: 100%;
+}
+
+.wrapper {
+  height: calc(12em * var(--height));
+  width: calc(6em * var(--width));
+  background-color: var(--calc-body);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0.2em 0.2em 0 #00000090;
+}
+
+.screen-wrapper,
+.key-wrapper {
+  padding: 1em;
+}
+
+.screen-wrapper {
+  flex-grow: 2;
+  max-height: 10em;
+}
+
+.screen {
+  padding: 0.5em;
+  background-color: var(--screen);
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
+  box-shadow: 0 0.2em 0.2em 0 #00000090;
+}
+
+.screen .expression {
+  height: 100%;
+  width: 100%;
+  font-size: 1.3em;
+  overflow: auto;
+}
+
+.expression::-webkit-scrollbar {
+  display: none;
+}
+
+.screen .total {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  text-align: end;
+}
+
+.key-wrapper {
+  flex-grow: 3;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.key-wrapper span {
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  user-select: none;
+  background-color: none;
+  transition: all 0.2s ease;
+  color: var(--calc-body);
+  font-weight: 500;
+}
+
+.key-wrapper span:last-child {
+  grid-column: span 2;
+}
+
+.key-wrapper span {
+  background-color: var(--numbers);
+  box-shadow: 0 0.2em 0.2em 0 #00000090;
+  position: relative;
+  transform: translateY(0);
+}
+
+.key-wrapper span[data-function="numbers"]:hover {
+  background-color: var(--functions);
+  color: #fff;
+}
+
+.key-wrapper span:not([data-function="numbers"]) {
+  background-color: var(--functions);
+  color: #fff;
+}
+
+.key-wrapper span:active,
+.key-wrapper span:focus {
+  transform: scale(0.98) translateY(0.1em);
+  box-shadow: 0 0.1em 0.1em 0 #00000090;
+}
+
+.toggle-wrapper {
+  position: absolute;
+  bottom: 2vh;
+  right: 2vh;
+  padding: 0.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  color: var(--functions);
+}
+
+/* Copied from W3Schools Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--functions);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #fff;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--numbers);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--numbers);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
